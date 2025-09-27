@@ -1,22 +1,23 @@
-# arithmetic_operations.py
-
-def perform_operation(num1: float, num2: float, operation: str):
+def perform_operation(num1, num2, operation):
     """
     Perform basic arithmetic operations.
     operation: 'add', 'subtract', 'multiply', 'divide'
-    For division by zero, returns the string "Cannot divide by zero."
+    Returns numeric result (float) for math operations.
+    If division by zero requested, returns the exact string:
+        "Cannot divide by zero."
+    Unknown operation -> returns None
     """
-    op = operation.strip().lower()
-    if op == "add":
-        return num1 + num2
-    elif op == "subtract":
-        return num1 - num2
-    elif op == "multiply":
-        return num1 * num2
-    elif op == "divide":
-        if num2 == 0:
+    operation = str(operation).strip().lower()
+
+    if operation == "add":
+        return float(num1) + float(num2)
+    elif operation == "subtract":
+        return float(num1) - float(num2)
+    elif operation == "multiply":
+        return float(num1) * float(num2)
+    elif operation == "divide":
+        if float(num2) == 0.0:
             return "Cannot divide by zero."
-        return num1 / num2
+        return float(num1) / float(num2)
     else:
-        # unknown operation - return None so caller can detect
         return None
