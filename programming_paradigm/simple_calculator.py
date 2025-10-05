@@ -1,4 +1,4 @@
-# simple_calculator.py
+# programming_paradigm/simple_calculator.py
 class SimpleCalculator:
     """A simple calculator class that supports basic arithmetic operations."""
 
